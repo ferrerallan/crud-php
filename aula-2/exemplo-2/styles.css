@@ -1,0 +1,12 @@
+.content {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
