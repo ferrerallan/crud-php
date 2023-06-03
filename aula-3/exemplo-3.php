@@ -1,5 +1,5 @@
 <?php
-   $produtos = ["Produto A", "Produto B", "Produto C"];
+   $produtos = ["Produto A", "Produto B", "Playstation"];
 ?>
 <html>
 <body>

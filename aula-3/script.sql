@@ -1,3 +1,4 @@
+---DDL----
 CREATE DATABASE minha_base;
 
 CREATE TABLE `produto` (
@@ -7,6 +8,8 @@ CREATE TABLE `produto` (
   PRIMARY KEY (`id`)
 )
 
+
+---DML----
 -- SELECT
 SELECT * FROM produtos;
 
