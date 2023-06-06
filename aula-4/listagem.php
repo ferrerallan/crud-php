@@ -1,44 +1,3 @@
-<!-- 
-Explicações dos itens do código PHP:
-
-class="delete-btn":
-  Essa classe é atribuída a um elemento HTML (geralmente um botão) para indicar que ele possui a função de exclusão de um item.
-
-href="editar.php?id=":
-  É um link que redireciona para a página "editar.php", passando o parâmetro "id" na URL para identificar qual item deve ser editado.
-
-style="cursor: pointer;":
-  Define o estilo do cursor quando o mouse é passado sobre o elemento como um ponteiro, indicando que ele é clicável.
-
-<i class="fa fa-eye" aria-hidden="true"></i>:
-  É um ícone visual, representado por uma tag <i> com a classe CSS "fa fa-eye", que geralmente é usada para representar a ação de visualizar um item.
-
-aria-hidden="true":
-  Define se o elemento deve ser oculto ou não para as tecnologias assistivas, como leitores de tela. Quando definido como "true", o elemento não é lido pelos leitores de tela.
-
-fetch_assoc():
-  É um método usado para obter a próxima linha do resultado de uma consulta SQL como um array associativo, onde as colunas são acessadas pelos seus nomes.
-
-$result = $conn->query($sql):
-  Executa uma consulta SQL na conexão com o banco de dados e atribui o resultado à variável $result.
-
-if ($conn->error):
-  Verifica se houve um erro na execução da consulta anterior e executa o código dentro do bloco "if" se houver um erro.
-
-class="table-responsive":
-  Essa classe é atribuída a um elemento HTML (geralmente uma div) para torná-lo responsivo, permitindo que seu conteúdo se ajuste ao tamanho da tela.
-
-class="container":
-  Essa classe é atribuída a um elemento HTML (geralmente uma div) para aplicar estilos de formatação do Bootstrap, como espaçamento e largura.
-
-<div class="modal fade" id="myModal">:
-  É um elemento HTML usado para criar um modal (caixa de diálogo) com um ID único para referenciá-lo posteriormente.
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">:
-  É um link que importa a biblioteca Font Awesome para o documento HTML, permitindo o uso de ícones personalizados em elementos HTML.
--->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,8 +27,8 @@ class="container":
 <!-- 
 Comentários explicativos para o modal:
 
-<div class="modal fade" id="myModal">
-  Define um modal (caixa de diálogo) com o ID "myModal".
+<div class="modal fade" id="modal-info">
+  Define um modal (caixa de diálogo) com o ID "modal-info".
 
   <div class="modal-dialog">
     Define a área de conteúdo do modal.
@@ -112,7 +71,7 @@ Comentários explicativos para o modal:
 -->
 
 <!--MODAL-->
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="modal-info">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -208,7 +167,7 @@ $(document).ready(function(){
     $("#productName").text(productName); // Define o nome do produto no elemento com o ID "productName"
     $("#productValue").text(productValue); // Define o valor do produto no elemento com o ID "productValue"
 
-    $("#myModal").modal(); // Abre o modal com os detalhes do produto
+    $("#modal-info").modal(); // Abre o modal com os detalhes do produto
   });
 });
 </script>
