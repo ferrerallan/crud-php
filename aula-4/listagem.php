@@ -7,7 +7,7 @@
   <!-- adicionando jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
-  <!-- adicionando Bootstrap CSS -->
+  <!-- adicionando Bootstrap CSS, biblioteca de icones -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
   <!-- adicionando Font Awesome -->
@@ -15,8 +15,9 @@
   
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
   <script>
-    function editarItem(id) {
+    function editarItem(id) {      
       // Redirecionar para a página de edição com o ID como parâmetro
       window.location.href = "editar.php?id=" + id;
     }
@@ -84,7 +85,7 @@ Comentários explicativos para o modal:
         <p>Valor: <span id="productValue"></span></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -99,7 +100,7 @@ Comentários explicativos para o modal:
     <a href="inclusao.php" class="btn btn-primary">
       <i class="fa fa-plus"></i> Incluir
     </a>
-
+    <!--efeito visual listrado -->
     <table class="table table-striped">
     <thead>
       <tr>
@@ -126,10 +127,18 @@ Comentários explicativos para o modal:
           <tr>
             <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['nome']; ?></td>
-            <td>R$ <?php echo number_format($row['valor'], 2, '.', ','); ?></td>
-            <td style="cursor: pointer;"><i class="fa fa-eye" aria-hidden="true"></i></td>
-            <td><a href="editar.php?id=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
-            <td><a href="#" 
+            <td><?php echo $row['valor']; ?></td>
+            <td style="cursor: pointer;">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </td>
+            <td>
+              <a href="editar.php?id=<?php echo $row['id']; ?>">
+                <i class="fa fa-edit">
+                </i>
+              </a>
+            </td>
+            <td>
+              <a href="#" 
                    class="delete-btn" 
                    data-id="<?php echo $row['id']; ?>">
                   <i class="fa fa-trash"></i>
@@ -142,10 +151,10 @@ Comentários explicativos para o modal:
   </div>
 </div>
 <script>
-$(document).ready(function(){
+$(document).ready(function(){ //espera ficar completamente carregado
   //Isso seleciona todos os elementos com a classe CSS "delete-btn" e atribui a eles um manipulador de evento de clique.
   $(".delete-btn").click(function(e){
-    e.preventDefault();
+    e.preventDefault(); //instruindo o navegador a não executar o comportamento padrão associado a esse evento
     // Obtém o ID do produto a ser excluído a partir do atributo 'data-id' do botão. O "this" se refere ao elemento atual que disparou o evento de clique.
     var productId = $(this).data('id'); 
     
@@ -157,7 +166,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".fa-eye").click(function(){
+  $(".fa-eye").click(function(){    
     var $row = $(this).closest("tr"); // Obtém a linha (tr) mais próxima do ícone de visualização clicado
     var productId = $row.find("td:nth-child(1)").text(); // Obtém o ID do produto da primeira célula (td) da linha
     var productName = $row.find("td:nth-child(2)").text(); // Obtém o nome do produto da segunda célula (td) da linha

@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     die("Falha na conexão com o banco de dados: " . $conn->connect_error);
   }
 
-  // Verificar se os campos de nome e valor foram enviados. Na primeira vez não vai passar aqui, pq vem de metodo GET
+  // vrificação do submitVerificar se os campos de nome e valor foram enviados. Na primeira vez não vai passar aqui, pq vem de metodo GET
   if (isset($_POST['nome']) && isset($_POST['valor'])) {
     // Recuperar os valores dos campos do formulário
     $novoNome = $_POST['nome'];
@@ -71,14 +71,24 @@ if (isset($_GET['id'])) {
   <div class="container">
     <h1 class="mt-4">Página de Edição</h1>
 
-    <form action="editar.php?id=<?php echo $id; ?>" method="POST">
+    <form action="editar.php?id=<?php echo $id; ?>" 
+          method="POST">
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>" required>
+        <input type="text" 
+               class="form-control" 
+               id="nome" 
+               name="nome" 
+               value="<?php echo $nome; ?>" required>
       </div>
       <div class="form-group">
         <label for="valor">Valor:</label>
-        <input type="number" step="0.01" class="form-control" id="valor" name="valor" value="<?php echo $valor; ?>" required>
+        <input type="number" 
+               step="0.01" 
+               class="form-control" 
+               id="valor" 
+               name="valor" 
+               value="<?php echo $valor; ?>" required>
       </div>
       <button type="submit" class="btn btn-primary">Salvar</button>
       <a href="listagem.php" class="btn btn-secondary">Voltar</a>
